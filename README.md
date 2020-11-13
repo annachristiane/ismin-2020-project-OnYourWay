@@ -12,7 +12,7 @@ Lien de l'application : https://Lignes-ack.cleverapps.io/lignes/
 
 Lien des données : https://data.opendatasoft.com/explore/dataset/referentiel-des-lignes%40stif/api/?disjunctive.transportmode&disjunctive.transportsubmode&disjunctive.operatorname&disjunctive.networkname&sort=transportmode
 
-# 📝 Goal
+# 🎯 Goal
 
 # Web Development 
 
