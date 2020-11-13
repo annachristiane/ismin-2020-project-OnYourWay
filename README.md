@@ -2,15 +2,15 @@
 
 ![](./logo.png)
 
-Deployer une application sur Clever Cloud. 
+Deployer une application sur Clever Cloud et utiliser l'API de ce dernier dans l'application Android. 
 
 # 📝 Description 
 
 Cette application permet de gérer les données issues de OpenData, des lignes de transport commun en îles-de-France.
 
-Lien de l'application : https://Lignes-ack.cleverapps.io/lignes/
+Lien de l'application Clever Cloud : [link](https://Lignes-ack.cleverapps.io/lignes/).
 
-Lien des données : https://data.opendatasoft.com/explore/dataset/referentiel-des-lignes%40stif/api/?disjunctive.transportmode&disjunctive.transportsubmode&disjunctive.operatorname&disjunctive.networkname&sort=transportmode
+Lien des données : [link](https://data.opendatasoft.com/explore/dataset/referentiel-des-lignes%40stif/api/?disjunctive.transportmode&disjunctive.transportsubmode&disjunctive.operatorname&disjunctive.networkname&sort=transportmode).
 
 # 🎯 Goal
 
