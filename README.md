@@ -18,9 +18,9 @@ Lien des données : [link](https://data.opendatasoft.com/explore/dataset/referen
 
 ## Slides
 
- 1. Web dev history: [link](https://docs.google.com/presentation/d/1G3NzexpajWE-8K_louukRLqgNoU7yIFUqiZ7g5rGV6A/edit?usp=sharing)
- 2. TypeScript: [link](https://docs.google.com/presentation/d/18u-UrIIRkzURgRof3yRqo-v0uqOOY5ooE5bbkh7It6E/edit?usp=sharing)
- 3. NestJS: [link](https://docs.google.com/presentation/d/16A2KWAtrzli1kY2_uALsbOGIJS8ZP-pPOhl_BZZ7Lag/edit?usp=sharing)
+ 1. Web dev history: [link](https://docs.google.com/presentation/d/1G3NzexpajWE-8K_louukRLqgNoU7yIFUqiZ7g5rGV6A/edit?usp=sharing).
+ 2. TypeScript: [link](https://docs.google.com/presentation/d/18u-UrIIRkzURgRof3yRqo-v0uqOOY5ooE5bbkh7It6E/edit?usp=sharing).
+ 3. NestJS: [link](https://docs.google.com/presentation/d/16A2KWAtrzli1kY2_uALsbOGIJS8ZP-pPOhl_BZZ7Lag/edit?usp=sharing).
  
 # Android Development 
 
