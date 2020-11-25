@@ -29,6 +29,9 @@ export class LigneDocument extends Document {
 
   @Prop()
   operatorname: string;
+
+  @Prop()
+  accessibility: string;
 }
 
 export const LigneSchema = SchemaFactory.createForClass(LigneDocument);

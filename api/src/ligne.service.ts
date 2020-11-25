@@ -1,4 +1,4 @@
-import { Injectable, Inject } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { getLignes, getRecords, Ligne } from './Ligne';
 import { record } from './Ligne';
 import { hits } from './Ligne';
@@ -19,18 +19,24 @@ export class LigneService {
     this.lignes = getLignes(this.records);
   }
 
- async findById(id_line: string): Promise<Ligne> {
-    return this.lignes.find(lignes => lignes.id_line == id_line);
+  async findByNameLine(name_line: string):Promise<Ligne>{
+    return this.lignes.find(lignes=>lignes.name_line == name_line);
+  }
+
+ async findByShortName(shortname_groupoflines: string): Promise<Ligne> {
+    return this.lignes.find(lignes => lignes.shortname_groupoflines == shortname_groupoflines);
   }
 
   async findByTransportMode(transportmode: string): Promise<Ligne[]> {
     return this.lignes.filter(lignes => lignes.transportmode == transportmode);
   }
 
-  async delete(id_line: string): Promise<void> {
-    //delete this.books[this.books.findIndex(book => book.title == title)];
-    // this.records = getRecords(this.hits).filter(ligne => ligne.recordid !== id_line);
-     this.lignes = getLignes(this.records).filter(ligne => ligne.id_line !== id_line)
-  //  return this.BookModel.findOneAndDelete({title: title}).exec();
+  async delete(shortname_groupoflines: string): Promise<void> {
+     this.lignes = getLignes(this.records).filter(ligne => ligne.shortname_groupoflines !== shortname_groupoflines);
   }
+
+  // async makeFavorite(name_line: string): Promise<Ligne>{
+  //   const results = this.findByNameLine(name_line);
+  //   return results;
+  // }
 }

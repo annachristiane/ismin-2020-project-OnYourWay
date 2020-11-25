@@ -41,5 +41,9 @@ export class CreateLigneDto implements Ligne{
   @IsNotEmpty()
   @IsString()
   transportsubmode: string;
+
+  @IsNotEmpty()
+  @IsString()
+  accessibility: string;
 }
 
