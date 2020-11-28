@@ -32,6 +32,9 @@ export class LigneDocument extends Document {
 
   @Prop()
   accessibility: string;
+
+  @Prop()
+  favorite: boolean;
 }
 
 export const LigneSchema = SchemaFactory.createForClass(LigneDocument);

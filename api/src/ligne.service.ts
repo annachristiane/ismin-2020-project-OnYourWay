@@ -1,7 +1,5 @@
-import { Injectable } from '@nestjs/common';
-import { getLignes, getRecords, Ligne } from './Ligne';
-import { record } from './Ligne';
-import { hits } from './Ligne';
+import { Injectable} from '@nestjs/common';
+import { record, hits, getLignes, getRecords, Ligne } from './Ligne';
 
 @Injectable()
 export class LigneService {
@@ -35,8 +33,11 @@ export class LigneService {
      this.lignes = getLignes(this.records).filter(ligne => ligne.shortname_groupoflines !== shortname_groupoflines);
   }
 
-  // async makeFavorite(name_line: string): Promise<Ligne>{
-  //   const results = this.findByNameLine(name_line);
-  //   return results;
+  makeFavorite(name_line: string): void{
+    this.lignes.find(lignes=>lignes.name_line == name_line).favorite = !this.lignes.find(lignes=>lignes.name_line == name_line).favorite;
+  }
+
+  // findFavorite(): Ligne[]{
+  //   return this.lignes.filter(lignes => lignes.favorite == true);
   // }
 }

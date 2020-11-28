@@ -1,4 +1,4 @@
-import {IsNotEmpty,IsString} from 'class-validator';
+import { IsBoolean, IsNotEmpty, IsString } from 'class-validator';
 import { Ligne } from './Ligne';
 
 export class CreateLigneDto implements Ligne{
@@ -45,5 +45,9 @@ export class CreateLigneDto implements Ligne{
   @IsNotEmpty()
   @IsString()
   accessibility: string;
+
+  @IsNotEmpty()
+  @IsBoolean()
+  favorite: boolean;
 }
 

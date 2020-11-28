@@ -1,8 +1,6 @@
 import { Controller, Get, Post, Body, Param, Delete, Put, Query } from '@nestjs/common';
 import { LigneService } from './ligne.service';
-import { CreateLigneDto } from './create-ligne-dto';
-import { LigneSchema,LigneDocument } from './ligne.schema';
-import { hits, Ligne, record } from './Ligne';
+import { hits, Ligne} from './Ligne';
 
 @Controller('/lignes')
 export class LigneController {
@@ -32,8 +30,13 @@ export class LigneController {
     return this.ligneService.delete(shortname_groupoflines);
   }
 
-  // @Put()
-  // async makeFavorite(@Param('name_line') name_line): Promise<Ligne>{
-  //   return this.ligneService.makeFavorite(name_line);
+  @Put(':name_line')
+  makeFavorite(@Param('name_line') name_line:string): void{
+    this.ligneService.makeFavorite(name_line);
+  }
+
+  // @Get(':favorite')
+  // findFavorite():Ligne[]{
+  //   return this.ligneService.findFavorite();
   // }
 }

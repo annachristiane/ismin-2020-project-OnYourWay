@@ -9,5 +9,6 @@ export interface Ligne extends Document {
   readonly name_line: string,
   readonly shortname_groupoflines: string,
   readonly networkname: string,
-  readonly operatorname: string
+  readonly operatorname: string,
+  readonly favorite: boolean
 }
