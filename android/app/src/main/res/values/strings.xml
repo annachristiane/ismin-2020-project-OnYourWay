@@ -1,5 +1,35 @@
 <resources>
-    <string name="app_name">Project App</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">On Your Way</string>
+    <string name="prom">CS - ISMIN EI18</string>
+    <string name="add_a_line">Add a line</string>
+    <string name="recherche">recherche</string>
+    <string name="shortname">Shortname</string>
+    <string name="name_line">Name Line</string>
+    <string name="status">Status</string>
+    <string name="Save">Sauvegarder</string>
+    <string name="creation">Creation</string>
+    <string name="information_menu_icon">Informations</string>
+    <string name="app_name_info">On Your Way Infos</string>
+    <string name="app_description">App Description</string>
+    <string name="author">Authors</string>
+    <string name="author_ack">Anna Christina Kolandjian</string>
+    <string name="linkedin_ack">Linkedin<a href="https://fr.linkedin.com/in/ac-kolandjian/fr-fr"/></string>
+    <string name="github_ack">Github<a href="https://github.com/ackolandjian"/></string>
+    <string name="author_cp">Clarisse Pouillery</string>
+    <string name="linkedin_cp">Linkedin<a href="https://fr.linkedin.com/in/clarisse-pouillery-72795b185" /></string>
+    <string name="github_cp">Github<a href="https://github.com/ClarissePllry" /></string>
+    <string name="instructions">Instructions</string>
+    <string name="instructions_content">This app offers you different possibilities.
+    You can check the information from a line, add a new one to the database if it is not referenced and scroll all the lines.</string>
+    <string name="project_purpose">Project Purpose</string>
+    <string name="project_purpose_content">The aim of this project is to propose an application which give information
+        from the reference system for Ile-de-France public transport lines</string>
+    <string name="requirements">Requirements</string>
+    <string name="requirements_content">Android Studio</string>
+    <string name="libraries">Libraries</string>
+    <string name="libraries_content">Plugins: Kotlin 1.4.10, Gradle, Android APK Support</string>
+    <string name="license">License</string>
+    <string name="license_content">Anna &amp; Clarisse license - 12/04/2020</string>
+    <string name="refresh_menu_icon">Refresh</string>
+    <string name="logo">Logo</string>
 </resources>

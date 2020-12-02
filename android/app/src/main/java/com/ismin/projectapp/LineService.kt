@@ -9,6 +9,9 @@ interface LineService {
     @GET("lignes")
     fun getAllLines(): Call<ArrayList<Line>>
 
+//    @GET(":name_line")
+//    fun getLine():Call<Line>
+
     @POST("lignes")
-    fun createLines(@Body() lines: Line): Call<Line>
+    fun createLines(@Body() line: Line): Call<Line>
 }
