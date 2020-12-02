@@ -1,35 +1,49 @@
-# LignesDeTransport-API
+# LignesDeTransport-API : On Your Way
 
 ![](./logo.png)
 
-Deployer une application sur Clever Cloud et utiliser l'API de ce dernier dans l'application Android. 
+Authors:
+ - Anna Christina Kolandjian
+ - Clarisse Pouillery
+ 
+ # 🎯 Goal
+Realization of an API with Nest JS and an Android application allowing to visualize OpenData
 
 # 📝 Description 
+We chosed to process public transport lines in the Ile-de-France region.
+This application will give your the name and the number lines, the transport mode and other details such as the accessibility and the status.
 
-Cette application permet de gérer les données issues de OpenData, des lignes de transport commun en îles-de-France.
+CleverCloud application link: [link](https://Lignes-ack.cleverapps.io/lignes/).
 
-Lien de l'application Clever Cloud : [link](https://Lignes-ack.cleverapps.io/lignes/).
-
-Lien des données : [link](https://data.opendatasoft.com/explore/dataset/referentiel-des-lignes%40stif/api/?disjunctive.transportmode&disjunctive.transportsubmode&disjunctive.operatorname&disjunctive.networkname&sort=transportmode).
-
-# 🎯 Goal
+Data link: [link](https://data.opendatasoft.com/explore/dataset/referentiel-des-lignes%40stif/api/?disjunctive.transportmode&disjunctive.transportsubmode&disjunctive.operatorname&disjunctive.networkname&sort=transportmode).
 
 # Web Development 
+ 1. OpenData data:
+   - JSON format
+   - With a field corresponding to the url of an image or a type allowing different images to be displayed in a list.
+   - Directly stored in the API code via a json file and used when starting the API.
+ 
+ 2. Expose URLs to make queries to :
+   - Retrieve a summary of all data (i.e. only the most important information for display in a list + favorite or not). 
+   - Retrieve the details of a data (for display in the details screen). 
+   - Bookmark or not. 
 
-## Slides
+ 3. Deployed on CleverCloud
 
- 1. Web dev history: [link](https://docs.google.com/presentation/d/1G3NzexpajWE-8K_louukRLqgNoU7yIFUqiZ7g5rGV6A/edit?usp=sharing).
- 2. TypeScript: [link](https://docs.google.com/presentation/d/18u-UrIIRkzURgRof3yRqo-v0uqOOY5ooE5bbkh7It6E/edit?usp=sharing).
- 3. NestJS: [link](https://docs.google.com/presentation/d/16A2KWAtrzli1kY2_uALsbOGIJS8ZP-pPOhl_BZZ7Lag/edit?usp=sharing).
+## Web Bonus (Optional)
+ - Instead of storing data in a JSON file, make a query at API startup to retrieve the data.
+ - Add a route to create new data
  
 # Android Development 
+ 1. Retrieving data from the api and displaying it in a list and a screen with details
+ 2. Possibility to bookmark certain elements
+ 3. Application consisting of at least : 
+   - 2 Fragment (the list + the screen with the information)
+   - 2 Activity
+ 4. A Toolbar will be present and will allow to refresh the data retrieved and displayed.
 
-## Slides
-
-Slides are available [here](https://docs.google.com/presentation/d/16A2KWAtrzli1kY2_uALsbOGIJS8ZP-pPOhl_BZZ7Lag/edit?usp=sharing).
-
-# Project 
-
-## Slides
-
-Slides are available [here]( https://docs.google.com/presentation/d/1mwu2xx7_qfCZDfsRxseC94n7oBGYfhw-9xIftaTDbzk/edit#slide=id.p97).
+## Android Bonus (Optional)
+ - Improving the user experience : Implementation of a search/filter system on the list displayed
+ - Technical enrichments :
+   - Implementation of a local database to display the item list in offline mode
+   - Using LiveData or Observable to recover data from the database
