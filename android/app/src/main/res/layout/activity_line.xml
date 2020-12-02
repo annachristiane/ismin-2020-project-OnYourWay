@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LineActivity">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/a_line_floating_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_add_24"
+        android:focusable="true" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/a_img_mobilite"
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                android:clickable="true"
+                android:contentDescription="@string/img_mobilite_idf"
+                android:fitsSystemWindows="true"
+                android:focusable="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ile_de_france_mobilites_partage" />
+
+            <TextView
+                android:id="@+id/a_line_txv_shortname_groupoflines"
+                android:layout_width="293dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="sans-serif-thin"
+                android:text="@string/shortname_group"
+                android:textColorLink="@color/colorBlack"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toEndOf="@+id/a_line_txv_name_line"
+                app:layout_constraintTop_toBottomOf="@id/a_img_mobilite" />
+
+            <ImageView
+                android:id="@+id/a_line_img_infos"
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="TODO"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/a_line_txv_shortname_groupoflines"
+                app:srcCompat="@drawable/ic_baseline_info_24" />
+
+            <TextView
+                android:id="@+id/a_line_txv_name_line"
+                android:layout_width="83dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/name_line"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/a_img_mobilite" />
+
+            <TextView
+                android:id="@+id/a_line_txv_status"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:text="@string/status"
+                app:layout_constraintBottom_toBottomOf="@+id/a_line_img_infos"
+                app:layout_constraintStart_toEndOf="@+id/a_line_img_infos" />
+
+            <TextView
+                android:id="@+id/a_line_txv_transportmode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/transportmode"
+                app:layout_constraintStart_toStartOf="@+id/a_line_txv_status"
+                app:layout_constraintTop_toBottomOf="@+id/a_line_txv_status" />
+
+            <TextView
+                android:id="@+id/a_line_txv_operator"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/operator"
+                app:layout_constraintStart_toStartOf="@+id/a_line_txv_transportmode"
+                app:layout_constraintTop_toBottomOf="@+id/a_line_txv_transportmode" />
+
+            <TextView
+                android:id="@+id/a_line_txv_network"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/network"
+                app:layout_constraintStart_toStartOf="@+id/a_line_txv_operator"
+                app:layout_constraintTop_toBottomOf="@+id/a_line_txv_operator" />
+
+            <TextView
+                android:id="@+id/a_line_txv_accessibility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/accessibility"
+                app:layout_constraintStart_toStartOf="@+id/a_line_txv_network"
+                app:layout_constraintTop_toBottomOf="@+id/a_line_txv_network" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

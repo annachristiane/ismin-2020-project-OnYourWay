@@ -3,9 +3,13 @@
     <string name="prom">CS - ISMIN EI18</string>
     <string name="add_a_line">Add a line</string>
     <string name="recherche">recherche</string>
-    <string name="shortname">Shortname</string>
+    <string name="shortname_group">Shortname Group Of Lines</string>
+    <string name="transportmode">Transport mode</string>
+    <string name="operator">Operator</string>
+    <string name="network">Network</string>
     <string name="name_line">Name Line</string>
-    <string name="status">Status</string>
+    <string name="status">Status of the line</string>
+    <string name="accessibility">Accessibility of the line</string>
     <string name="Save">Sauvegarder</string>
     <string name="creation">Creation</string>
     <string name="information_menu_icon">Informations</string>
@@ -13,8 +17,8 @@
     <string name="app_description">App Description</string>
     <string name="author">Authors</string>
     <string name="author_ack">Anna Christina Kolandjian</string>
-    <string name="linkedin_ack">Linkedin<a href="https://fr.linkedin.com/in/ac-kolandjian/fr-fr"/></string>
-    <string name="github_ack">Github<a href="https://github.com/ackolandjian"/></string>
+    <string name="linkedin_ack">Linkedin<a href="https://fr.linkedin.com/in/ac-kolandjian/fr-fr" /></string>
+    <string name="github_ack">Github<a href="https://github.com/ackolandjian" /></string>
     <string name="author_cp">Clarisse Pouillery</string>
     <string name="linkedin_cp">Linkedin<a href="https://fr.linkedin.com/in/clarisse-pouillery-72795b185" /></string>
     <string name="github_cp">Github<a href="https://github.com/ClarissePllry" /></string>
@@ -32,4 +36,7 @@
     <string name="license_content">Anna &amp; Clarisse license - 12/04/2020</string>
     <string name="refresh_menu_icon">Refresh</string>
     <string name="logo">Logo</string>
+    <string name="img_mobilite_idf">Image mobilité idf</string>
+    <string name="list">List</string>
+    <string name="infos">Infos</string>
 </resources>

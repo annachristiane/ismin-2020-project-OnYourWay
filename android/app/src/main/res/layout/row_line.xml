@@ -23,26 +23,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:textSize="12sp"
         android:fontFamily="sans-serif-medium"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/r_line_imv_logo"
         app:layout_constraintStart_toEndOf="@+id/r_line_imv_logo"
         app:layout_constraintTop_toBottomOf="@+id/r_line_txv_name_line"
         tools:text="Rambouillet (Gare Prairie) - Dourdan (Gare)" />
-
-    <TextView
-        android:id="@+id/r_line_txv_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:fontFamily="sans-serif-medium"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/r_line_imv_logo"
-        app:layout_constraintStart_toEndOf="@+id/r_line_imv_logo"
-        app:layout_constraintTop_toBottomOf="@+id/r_line_txv_shortname_groupoflines"
-        tools:text="Status: Active" />
 
     <ImageView
         android:id="@+id/r_line_imv_logo"
@@ -57,21 +44,28 @@
         android:id="@+id/f_unfavorite_button"
         android:layout_width="56dp"
         android:layout_height="52dp"
-        app:layout_constraintBottom_toBottomOf="@+id/r_line_txv_status"
+        android:clickable="true"
         app:layout_constraintEnd_toEndOf="@+id/r_line_txv_name_line"
         app:layout_constraintTop_toTopOf="@+id/r_line_txv_name_line"
-        app:srcCompat="@android:drawable/btn_star"
-        android:clickable="true"/>
+        app:srcCompat="@android:drawable/btn_star" />
 
     <ImageButton
         android:id="@+id/f_favorite_button"
         android:layout_width="56dp"
         android:layout_height="52dp"
-        app:layout_constraintBottom_toBottomOf="@+id/r_line_txv_status"
+        android:clickable="true"
+        android:onClick="goToCreation"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@+id/r_line_txv_name_line"
         app:layout_constraintTop_toTopOf="@+id/r_line_txv_name_line"
-        android:clickable="true"
-        android:visibility="gone"
-        android:onClick="goToCreation"
         app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <TextView
+        android:id="@+id/r_line_txv_transport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/transportmode"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/r_line_imv_logo"
+        app:layout_constraintTop_toBottomOf="@+id/r_line_txv_shortname_groupoflines" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.ismin.projectapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -7,21 +8,32 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
-import kotlinx.android.synthetic.main.activity_main.*
+import androidx.viewpager.widget.PagerAdapter
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_info.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.io.Serializable
 
-class MainActivity : AppCompatActivity(), LineCreator {
+class MainActivity : AppCompatActivity(), LineListFragment.OnFragmentInteractionListener,
+InfoFragment.OnFragmentInteractionListener{
     private val linecontroller = LineController()
     private lateinit var lineService: LineService
+
+    private var lineListFragment: LineListFragment = LineListFragment()
+    private var infoFragment: InfoFragment = InfoFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+        val tabLayout: TabLayout = findViewById(R.id.a_main_tab_layout)
+        tabLayout.tabGravity = TabLayout.GRAVITY_FILL
 
         val retrofit = Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
@@ -29,24 +41,36 @@ class MainActivity : AppCompatActivity(), LineCreator {
                 .build()
 
         lineService = retrofit.create(LineService::class.java)
-
         lineService.getAllLines().enqueue(object : Callback<ArrayList<Line>> {
             override fun onResponse(
-                    call: Call<ArrayList<Line>>,
-                    response: Response<ArrayList<Line>>
-            ) {
-                val allLines = response.body()
-                allLines?.forEach {
-                    linecontroller.addLine(it)
-                }
-                displayList()
-            }
-
+                call: Call<ArrayList<Line>>,
+                response: Response<ArrayList<Line>>
+            ){displayList()}
             override fun onFailure(call: Call<ArrayList<Line>>, t: Throwable) {
                 displayErrorToast(t)
             }
         })
 
+        val viewPager: ViewPager = findViewById(R.id.a_main_view_pager)
+        val adapter = PagerAdapter(supportFragmentManager,tabLayout.tabCount)
+
+        adapter.addFragment(lineListFragment, "Liste")
+        adapter.addFragment(infoFragment, "Infos")
+        viewPager.adapter = adapter
+        tabLayout.setupWithViewPager(viewPager)
+        viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
+
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                viewPager.currentItem = tab.position
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+            }
+        })
     }
 
     private fun displayErrorToast(t: Throwable) {
@@ -61,59 +85,33 @@ class MainActivity : AppCompatActivity(), LineCreator {
         val lineListFragment = LineListFragment.newInstance(linecontroller.getAllLines())
 
         supportFragmentManager.beginTransaction()
-                .replace(R.id.a_main_lyt_container, lineListFragment)
+                .replace(R.id.a_main_root_layout, lineListFragment)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .commit()
     }
 
     fun closeInfoFragment(view: View){
         displayList()
-
-        a_main_btn_creation.visibility = View.VISIBLE
         f_info_button.visibility = View.GONE
-    }
-
-    fun goToCreation(view: View) {
-        val createLineFragment = CreateLineFragment()
-
-        supportFragmentManager.beginTransaction()
-                .add(R.id.a_main_lyt_container, createLineFragment)
-                .addToBackStack("createLineFragment")
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                .commit()
-
-        a_main_btn_creation.visibility = View.GONE
     }
 
     fun displayInfo(){
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         val infoFragment = InfoFragment()
-
-        fragmentTransaction.replace(R.id.a_main_lyt_container, infoFragment)
+        fragmentTransaction.replace(R.id.a_main_root_layout, infoFragment)
         fragmentTransaction.commit()
-
-        a_main_btn_creation.visibility = View.GONE
     }
-
-    override fun onLineCreated(line: Line) {
-        lineService.createLines(line).enqueue{
-            onResponse = {
-                linecontroller.addLine(it.body()!!)
-                closeCreateFragment()
-            }
-            onFailure = {
-                if (it!=null)
-                    displayErrorToast(it)
-            }
-        }
-    }
-
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
+    override fun onItemClicked(line: Line){
+        val lineIntent = Intent(this, LineActivity::class.java)
+        lineIntent.putExtra("line_infos", line as Serializable)
+        this.startActivity(lineIntent)
+    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
@@ -129,8 +127,4 @@ class MainActivity : AppCompatActivity(), LineCreator {
         }
     }
 
-    override fun closeCreateFragment() {
-        displayList();
-        a_main_btn_creation.visibility = View.VISIBLE
-    }
 }

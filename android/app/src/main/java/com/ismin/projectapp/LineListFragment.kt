@@ -89,4 +89,8 @@ class LineListFragment : Fragment(), onFavoriteListener {
                 }
             }
     }
+
+    interface OnFragmentInteractionListener {
+        fun onItemClicked(line:Line)
+    }
 }

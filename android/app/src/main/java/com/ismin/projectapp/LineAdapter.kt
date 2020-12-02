@@ -12,11 +12,11 @@ class LineAdapter(private var lines:ArrayList<Line>, private val favoriteListene
     }
 
     override fun onBindViewHolder(holder: LineViewHolder, position: Int) {
-        val(status, name_line, shortname_groupoflines) = this.lines[position]
+        val(status, transportmode, name_line, shortname_groupoflines, networkname, operatorname, accessibility) = this.lines[position]
 
         holder.txvNameLine.text = name_line
         holder.txvShortNameGroupOfLine.text = shortname_groupoflines
-        holder.txvStatus.text = status
+        holder.txvTransport.text = transportmode
 
         holder.unfavButton.setOnClickListener{
             favoriteListener.unfavFavorite(position)

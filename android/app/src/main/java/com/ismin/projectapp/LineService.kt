@@ -12,6 +12,4 @@ interface LineService {
 //    @GET(":name_line")
 //    fun getLine():Call<Line>
 
-    @POST("lignes")
-    fun createLines(@Body() line: Line): Call<Line>
 }
