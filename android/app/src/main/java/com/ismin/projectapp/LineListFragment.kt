@@ -16,10 +16,10 @@ import androidx.recyclerview.widget.RecyclerView
 private const val ARG_LINES = "ARG_LINES"
 
 class LineListFragment : Fragment(), onFavoriteListener {
-    private lateinit var lines:ArrayList<Line>
+    private lateinit var lines: ArrayList<Line>
     private lateinit var rcvLines: RecyclerView
     private lateinit var adapter: LineAdapter
-    private val favoriteLines = arrayListOf<Line>()
+    private var favoriteLines = arrayListOf<Line>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,11 +69,11 @@ class LineListFragment : Fragment(), onFavoriteListener {
 
     fun filter(text: String) {
         val temp = arrayListOf<Line>()
-        var lowerText = text.toLowerCase()
+        val lowerText = text.toLowerCase()
         for (d in lines) {
             if (d.name_line.toLowerCase().contains(lowerText) ||
                     d.shortname_groupoflines.toLowerCase().contains(lowerText) ||
-                    d.status.toLowerCase().contains(lowerText)) {
+                    d.transportmode.toLowerCase().contains(lowerText)) {
                 temp.add(d)
             }
         }

@@ -8,12 +8,11 @@
 
     <EditText
         android:id="@+id/f_line_list_search"
-        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/recherche"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColorLink="#FF5722"
         android:textSize="18sp" />
 

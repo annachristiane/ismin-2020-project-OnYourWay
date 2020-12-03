@@ -8,8 +8,8 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
-import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_info.*
 import retrofit2.Call
@@ -90,12 +90,12 @@ InfoFragment.OnFragmentInteractionListener{
                 .commit()
     }
 
-    fun closeInfoFragment(view: View){
+    fun closeInfoFragment(){
         displayList()
         f_info_button.visibility = View.GONE
     }
 
-    fun displayInfo(){
+    private fun displayInfo(){
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         val infoFragment = InfoFragment()
         fragmentTransaction.replace(R.id.a_main_root_layout, infoFragment)
