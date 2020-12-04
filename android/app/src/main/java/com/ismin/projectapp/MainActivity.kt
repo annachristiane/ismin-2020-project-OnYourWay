@@ -28,7 +28,7 @@ InfoFragment.OnFragmentInteractionListener{
         val lineListFragment = LineListFragment.newInstance(linecontroller.getAllLines())
 
         supportFragmentManager.beginTransaction()
-                .replace(R.id.a_main_root_layout, lineListFragment)
+                .replace(R.id.a_main_lyt_container, lineListFragment)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .commit()
     }
@@ -94,7 +94,7 @@ InfoFragment.OnFragmentInteractionListener{
     private fun displayInfo(){
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         val infoFragment = InfoFragment()
-        fragmentTransaction.replace(R.id.a_main_root_layout, infoFragment)
+        fragmentTransaction.replace(R.id.a_main_lyt_container, infoFragment)
         fragmentTransaction.commit()
     }
 
