@@ -48,6 +48,7 @@ class LineListFragment : Fragment(), onFavoriteListener {
 
         this.rcvLines=rootView.findViewById(R.id.f_line_list_rcv_lines)
         this.adapter = LineAdapter(lines, listener, context, this)
+        this.rcvLines.adapter = adapter
         val linearLayoutManager = LinearLayoutManager(context)
         this.rcvLines.layoutManager=linearLayoutManager
 

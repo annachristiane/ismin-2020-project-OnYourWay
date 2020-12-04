@@ -19,7 +19,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.Serializable
 
-class MainActivity : AppCompatActivity(), LineListFragment.OnFragmentInteractionListener,
+class MainActivity : AppCompatActivity(), LineCreator, LineListFragment.OnFragmentInteractionListener,
 InfoFragment.OnFragmentInteractionListener{
     private val linecontroller = LineController()
     private lateinit var lineService: LineService
@@ -52,7 +52,7 @@ InfoFragment.OnFragmentInteractionListener{
                 .build()
 
 
-        lineService = retrofit.create(lineService::class.java)
+        lineService = retrofit.create(LineService::class.java)
 
         lineService.getAllLines().enqueue(object : Callback<ArrayList<Line>> {
             override fun onResponse(
@@ -63,13 +63,11 @@ InfoFragment.OnFragmentInteractionListener{
                 allLines?.forEach {
                     linecontroller.addLine(it)
                 }
-
                 displayList()
             }
 
             override fun onFailure(call: Call<ArrayList<Line>>, t: Throwable) {
                 displayErrorToast(t)
-
             }
         })
 
@@ -101,6 +99,34 @@ InfoFragment.OnFragmentInteractionListener{
     fun closeInfoFragment(view: View) {
         displayList()
         f_info_button.visibility = View.GONE
+    }
+
+    fun goToCreation(view: View) {
+        val createLineFragment = CreateLineFragment()
+
+        supportFragmentManager.beginTransaction()
+            .add(R.id.a_main_lyt_container, createLineFragment)
+            .addToBackStack("createLineFragment")
+            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+            .commit()
+    }
+
+    override fun onLineCreated(line: Line) {
+        lineService.createLine(line).enqueue {
+            onResponse = {
+                linecontroller.addLine(it.body()!!)
+                closeCreateFragment()
+            }
+            onFailure = {
+                if (it != null) {
+                    displayErrorToast(it)
+                }
+            }
+        }
+    }
+
+    override fun closeCreateFragment(){
+        displayList()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
