@@ -1,5 +1,6 @@
 package com.ismin.projectapp
 
+import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -15,9 +16,9 @@ import androidx.recyclerview.widget.RecyclerView
 
 private const val ARG_LINES = "ARG_LINES"
 
-@Suppress("UNCHECKED_CAST")
 class LineListFragment : Fragment(), onFavoriteListener {
-    private var lines = arrayListOf<Line>()
+    private var listener: OnFragmentInteractionListener? = null
+    private lateinit var lines: ArrayList<Line>
     private lateinit var rcvLines: RecyclerView
     private lateinit var adapter: LineAdapter
     private var favoriteLines = arrayListOf<Line>()
@@ -46,7 +47,7 @@ class LineListFragment : Fragment(), onFavoriteListener {
         val searchField: EditText = rootView.findViewById(R.id.f_line_list_search)
 
         this.rcvLines=rootView.findViewById(R.id.f_line_list_rcv_lines)
-        this.adapter = LineAdapter(lines, this)
+        this.adapter = LineAdapter(lines, listener, context, this)
         val linearLayoutManager = LinearLayoutManager(context)
         this.rcvLines.layoutManager=linearLayoutManager
 
@@ -89,6 +90,23 @@ class LineListFragment : Fragment(), onFavoriteListener {
                     putSerializable(ARG_LINES, ArrayList(lines))
                 }
             }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is OnFragmentInteractionListener) {
+            listener = context
+        } else {
+            throw RuntimeException(
+                    context.toString() +
+                            " must implement OnFragmentInteractionListener"
+            )
+        }
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        listener = null
     }
 
     interface OnFragmentInteractionListener {

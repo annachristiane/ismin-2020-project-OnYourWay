@@ -13,5 +13,5 @@ data class Line(
         val networkname: String,
         val operatorname: String,
         val accessibility: String,
-        val favorite: Boolean
+        val favorite: String
 ): Serializable

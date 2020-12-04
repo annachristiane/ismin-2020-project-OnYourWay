@@ -8,49 +8,48 @@
     android:animateLayoutChanges="true"
     tools:context=".MainActivity">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/a_main_tab_layout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:animateLayoutChanges="true"
+
+    <Button
+        android:id="@+id/list"
+        android:layout_width="250dp"
+        android:layout_height="52dp"
+        android:background="#ff6348"
+        android:fontFamily="casual"
+        android:text="@string/list"
+        android:textColor="#F5F3F1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/information"
+        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/information"
+        android:layout_width="250dp"
+        android:layout_height="52dp"
+        android:background="#ff6348"
+        android:fontFamily="casual"
+        android:text="@string/infos"
+        android:textColor="#F9F8FC"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tabIndicatorColor="@color/colorPrimary"
-        app:tabSelectedTextColor="@color/colorPrimary">
+        app:layout_constraintVertical_bias="0.0" />
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="@string/list" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="@string/infos" />
-
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/a_main_view_pager"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="5dp"
-        android:alwaysDrawnWithCache="false"
-        android:animateLayoutChanges="true"
-        android:animationCache="false"
-        android:clickable="true"
-        android:focusable="true"
+    <RelativeLayout
+        android:id="@+id/a_main_lyt_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/a_main_tab_layout"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingClass" />
+        app:layout_constraintStart_toStartOf="parent">
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

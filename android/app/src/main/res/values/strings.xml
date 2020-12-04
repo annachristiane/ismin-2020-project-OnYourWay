@@ -4,15 +4,9 @@
     <string name="add_a_line">Add a line</string>
     <string name="recherche">recherche</string>
     <string name="shortname_group">Shortname Group Of Lines</string>
-    <string name="transportmode">Transport mode</string>
-    <string name="operator">Operator</string>
-    <string name="network">Network</string>
     <string name="name_line">Name Line</string>
-    <string name="status">Status of the line</string>
-    <string name="accessibility">Accessibility of the line</string>
     <string name="Save">Sauvegarder</string>
     <string name="creation">Creation</string>
-    <string name="information_menu_icon">Informations</string>
     <string name="app_name_info">On Your Way Infos</string>
     <string name="app_description">App Description</string>
     <string name="author">Authors</string>
@@ -39,4 +33,14 @@
     <string name="img_mobilite_idf">Image mobilité idf</string>
     <string name="list">List</string>
     <string name="infos">Infos</string>
+    <string name="status_of_the_line">Status of the line</string>
+    <string name="transport_mode">Transport mode</string>
+    <string name="operator">Operator</string>
+    <string name="network">Network</string>
+    <string name="accessibility_of_the_line">Accessibility of the line</string>
+    <string name="information">Information</string>
+    <string name="accessibility">accessibility</string>
+    <string name="status">status</string>
+    <string name="transportmode">transport</string>
+    <string name="information_menu_icon">info</string>
 </resources>

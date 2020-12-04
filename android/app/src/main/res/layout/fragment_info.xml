@@ -225,6 +225,7 @@
                             app:srcCompat="@drawable/ic_baseline_link_24"/>
 
                         <TextView
+                            android:id="@+id/hyperlink_git_anna"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -232,11 +233,11 @@
                             android:layout_marginLeft="10dp"
                             android:autoLink="web"
                             android:clickable="true"
+                            android:focusable="true"
                             android:text="@string/github_ack"
                             android:textColor="@color/colorWhite"
                             android:textColorLink="@color/colorWhite"
-                            android:textSize="12sp"
-                            android:focusable="true" />
+                            android:textSize="12sp" />
                     </LinearLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -300,6 +301,7 @@
                             app:srcCompat="@drawable/ic_baseline_link_24" />
 
                         <TextView
+                            android:id="@+id/hyperlink_linkedin_clarisse"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -330,6 +332,7 @@
                             app:srcCompat="@drawable/ic_baseline_link_24" />
 
                         <TextView
+                            android:id="@+id/hyperlink_git_clarisse"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"

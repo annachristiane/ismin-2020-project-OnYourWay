@@ -16,10 +16,9 @@ class LineActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        lineMainActivity = intent.getSerializableExtra("line_infos") as Line
+        lineMainActivity = intent.getSerializableExtra("line_info") as Line
 
         setContentView(R.layout.activity_line)
-        floatingButton = findViewById(R.id.a_line_floating_button)
 
         val status: TextView = findViewById(R.id.a_line_txv_status)
         status.text = lineMainActivity.status
