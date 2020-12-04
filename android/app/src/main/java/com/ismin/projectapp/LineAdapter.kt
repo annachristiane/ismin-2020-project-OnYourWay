@@ -11,7 +11,6 @@ class LineAdapter(
         private val fragmentInteractionListener: LineListFragment.OnFragmentInteractionListener?,
         private val context: Context?,
         private val favoriteListener:onFavoriteListener): RecyclerView.Adapter<LineViewHolder>() {
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LineViewHolder {
         val row = LayoutInflater.from(parent.context).inflate(R.layout.row_line, parent, false)
         return LineViewHolder(row)

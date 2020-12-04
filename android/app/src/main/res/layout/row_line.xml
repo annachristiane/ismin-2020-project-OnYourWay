@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#E9D3FF"
     android:padding="16dp">
 
     <TextView
@@ -20,7 +21,7 @@
 
     <TextView
         android:id="@+id/r_line_txv_shortname_groupoflines"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:fontFamily="sans-serif-medium"
