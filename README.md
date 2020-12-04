@@ -13,7 +13,7 @@ Realization of an API with Nest JS and an Android application allowing to visual
 We chosed to process public transport lines in the Ile-de-France region.
 This application will give your the name and the number lines, the transport mode and other details such as the accessibility and the status.
 
-CleverCloud application link: [link](https://Lignes-ack.cleverapps.io/lignes/).
+CleverCloud application link: [link](https://lignes-ack-cpy.cleverapps.io/lignes/).
 
 Data link: [link](https://data.opendatasoft.com/explore/dataset/referentiel-des-lignes%40stif/api/?disjunctive.transportmode&disjunctive.transportsubmode&disjunctive.operatorname&disjunctive.networkname&sort=transportmode).
 
@@ -47,3 +47,9 @@ Data link: [link](https://data.opendatasoft.com/explore/dataset/referentiel-des-
  - Technical enrichments :
    - Implementation of a local database to display the item list in offline mode
    - Using LiveData or Observable to recover data from the database
+
+# Our last words
+We enjoyed working on this project, even if we had some difficulties with the deployment of CleverCloud, Android Studio and its famous emulator. 
+We tried to select the data that we thought was important on the public transport lines in the Ile-de-France region, such as accessibility or the transport mode for example.
+And here is the result!  We have attached 3 photos that represent the three views available in our Android application.
+We hope you'll enjoy this project and have a good discovery! :)
