@@ -15,8 +15,9 @@ import androidx.recyclerview.widget.RecyclerView
 
 private const val ARG_LINES = "ARG_LINES"
 
+@Suppress("UNCHECKED_CAST")
 class LineListFragment : Fragment(), onFavoriteListener {
-    private lateinit var lines: ArrayList<Line>
+    private var lines = arrayListOf<Line>()
     private lateinit var rcvLines: RecyclerView
     private lateinit var adapter: LineAdapter
     private var favoriteLines = arrayListOf<Line>()

@@ -12,7 +12,7 @@ class LineAdapter(private var lines:ArrayList<Line>, private val favoriteListene
     }
 
     override fun onBindViewHolder(holder: LineViewHolder, position: Int) {
-        val(status, transportmode, name_line, shortname_groupoflines, networkname, operatorname, accessibility) = this.lines[position]
+        val(status, id_line, transportsubmode, transportmode, shortname_line, name_line, shortname_groupoflines, networkname, operatorname, accessibility, favorite) = this.lines[position]
 
         holder.txvNameLine.text = name_line
         holder.txvShortNameGroupOfLine.text = shortname_groupoflines

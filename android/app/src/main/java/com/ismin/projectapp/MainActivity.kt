@@ -9,7 +9,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager.widget.ViewPager
-import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_info.*
 import retrofit2.Call
@@ -37,7 +36,7 @@ InfoFragment.OnFragmentInteractionListener{
 
         val retrofit = Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://lignes-ack.cleverapps.io/")
+                .baseUrl("https://lignes-ack-cpy.cleverapps.io/lignes/")
                 .build()
 
         lineService = retrofit.create(LineService::class.java)
@@ -90,11 +89,6 @@ InfoFragment.OnFragmentInteractionListener{
                 .commit()
     }
 
-    fun closeInfoFragment(){
-        displayList()
-        f_info_button.visibility = View.GONE
-    }
-
     private fun displayInfo(){
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         val infoFragment = InfoFragment()
@@ -127,4 +121,8 @@ InfoFragment.OnFragmentInteractionListener{
         }
     }
 
+    fun closeInfoFragment(view: View) {
+        displayList()
+        f_info_button.visibility = View.GONE
+    }
 }
