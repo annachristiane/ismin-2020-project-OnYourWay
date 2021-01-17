@@ -10,8 +10,8 @@ Authors:
 Realization of an API with Nest JS and an Android application allowing to visualize OpenData
 
 # 📝 Description 
-We chosed to process public transport lines in the Ile-de-France region.
-This application will give your the name and the number lines, the transport mode and other details such as the accessibility and the status.
+We chose to process public transport lines in the Ile-de-France region.
+This application will give you the name and the number lines, the transport mode and other details such as the accessibility and the status.
 
 CleverCloud application link: [link](https://lignes-ack-cpy.cleverapps.io/lignes/).
 
